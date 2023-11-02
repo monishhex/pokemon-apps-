@@ -1,0 +1,61 @@
+/* Navigation bar */
+.toolbar {
+    background: linear-gradient(to right, #ff0000, #ffee00,rgb(0, 4, 255));
+}
+
+/* Typography style for the app name */
+.toolbar .MuiTypography-root {
+    flex-grow: 1;
+}
+
+/* Style for the navigation links */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-list li {
+    margin-right: 20px;
+}
+
+.nav-list li:last-child {
+    margin-right: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    transform-origin: bottom;
+}
+
+/* Animation for Home and Contact links */
+.nav-list a:hover {
+    color: #FFC107;
+    transform: scale(1.1);
+}
+
+/* Gradient animation for Home and Contact links */
+.nav-list a[data-link="home"]:before,
+.nav-list a[data-link="contact"]:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: linear-gradient(to right, #FFC107, #FF9800);
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+.nav-list a[data-link="home"]:hover:before,
+.nav-list a[data-link="contact"]:hover:before {
+    transform: scaleX(1);
+}
